@@ -1,0 +1,64 @@
+:root {
+    --primary: #4a90e2;
+    --success: #28a745;
+    --error: #dc3545;
+    --bg: #f0f2f5;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.hidden { display: none; }
+
+h1 { color: #333; margin-bottom: 0.5rem; }
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover { opacity: 0.9; }
+
+.toggle-text { font-size: 0.9rem; margin-top: 1rem; }
+.toggle-text span { color: var(--primary); cursor: pointer; text-decoration: underline; }
+
+.msg { margin-top: 10px; padding: 10px; border-radius: 4px; font-size: 0.85rem; display: none; }
+.msg.error { display: block; background: #fee; color: var(--error); }
+.msg.success { display: block; background: #efe; color: var(--success); }
+
+/* Dashboard Styles */
+header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; margin-bottom: 1rem; }
+.logout-btn { width: auto; background: #666; font-size: 0.8rem; padding: 5px 10px; }
+.ai-box { margin-top: 20px; background: #f9f9ff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary); }
+.plan-item { text-align: left; background: white; margin: 5px 0; padding: 8px; border-radius: 4px; border: 1px solid #eee; }

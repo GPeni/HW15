@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <section id="register-screen" class="card">
+            <h1>AI Study Buddy</h1>
+            <p>Join our community of learners</p>
+            <form id="register-form">
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="password" id="reg-password" placeholder="Password (min 6 chars)" minlength="6" required>
+                <select id="reg-goal">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="React">React</option>
+                    <option value="Algorithms">Algorithms</option>
+                    <option value="Bagrut">Bagrut Exam</option>
+                </select>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="toggle-text">Already have an account? <span onclick="showScreen('login-screen')">Login</span></p>
+            <div id="reg-msg" class="msg"></div>
+        </section>
+
+        <section id="login-screen" class="card hidden">
+            <h1>Welcome Back</h1>
+            <form id="login-form">
+                <input type="text" id="login-id" placeholder="Username or Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p class="toggle-text">New here? <span onclick="showScreen('register-screen')">Register</span></p>
+            <div id="login-msg" class="msg"></div>
+        </section>
+
+        <section id="dashboard-screen" class="card hidden">
+            <header>
+                <h2>Hello, <span id="user-name-display"></span>!</h2>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </header>
+            <div class="user-info">
+                <p>Your Current Goal: <strong id="user-goal-display"></strong></p>
+            </div>
+            
+            <div class="ai-box">
+                <h3>AI Study Planner</h3>
+                <label>How many hours per day?</label>
+                <input type="number" id="study-hours" placeholder="e.g. 2" min="1">
+                <button onclick="generatePlan()">Generate Study Plan</button>
+                <div id="ai-plan-output"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
